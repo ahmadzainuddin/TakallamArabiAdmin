@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button (click)="goBackWithParams()"></ion-back-button> -->
+      <ion-icon name="chevron-back-outline" style="font-size: 35px;" (click)="goToHome()"></ion-icon>
+   </ion-buttons>
+    <ion-title>About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">about</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <p>&nbsp;</p>
+
+  <ion-card>
+    <ion-card-header>
+      <div style="text-align: center;">
+        <h3>Takallam Arabi Education</h3>
+        (KT0567071-D)<br><br>
+        <div style="font-size: 18px;">No 8F, Tingkat Atas,<br>
+        Hadapan Masjid Kulim,<br>
+        09000 Kulim, Kedah, Malaysia<br><br>
+        https://www.takallamarabi.com<p>
+        App Version: {{ appVersion }}
+      </div>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+
+</ion-content>

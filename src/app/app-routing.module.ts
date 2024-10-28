@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'ayat',
     pathMatch: 'full'
+  },
+  {
+    path: 'ayat',
+    loadChildren: () => import('./ayat/ayat.module').then( m => m.AyatPageModule)
+  },
+  {
+    path: 'ayatopen',
+    loadChildren: () => import('./ayatopen/ayatopen.module').then( m => m.AyatOpenPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   },
 ];
 

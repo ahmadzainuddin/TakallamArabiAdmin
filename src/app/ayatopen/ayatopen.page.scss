@@ -1,0 +1,13 @@
+.custom-header-background {
+  --background: #fff; /* Your custom background color */
+}
+
+
+ion-content {
+  --background: none; /* Remove Ionic's default background */
+  // background-image: url('/assets/tadika/Tadika_background4.webp');
+  background-color: #d3e1f4;
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+}

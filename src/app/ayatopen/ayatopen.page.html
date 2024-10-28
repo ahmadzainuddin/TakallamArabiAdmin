@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <!-- <ion-back-button (click)="goBackWithParams()"></ion-back-button> -->
+       <ion-icon name="chevron-back-outline" style="font-size: 35px;" (click)="goBackWithParams()"></ion-icon>
+    </ion-buttons>
+    <ion-title>Ayat Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- {{ayatData.langguage_wav}} -->
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+  <ion-card>
+    <ion-card-header>
+      <p>
+      <ion-card-subtitle style="text-align: center;">{{ ayatData.caption }}</ion-card-subtitle><p>
+      <ion-card-title [ngStyle]="{ 'text-align': 'center', 'font-size': getFontSize(ayatData.caption) }"> {{ ayatData.langguage }}</ion-card-title>
+      <br>
+    </ion-card-header>
+  </ion-card>
+
+
+
+    <ion-grid>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-item lines="none" *ngIf="ayatData.langguage_wav" style="--background: #d3e1f4;">
+          <ion-button color="primary" fill="clear" (click)="playWavUrl('https://dividen.cbp.com.my/dev/ta/uploads/' + ayatData.langguage_wav)">
+            <ion-icon style="font-size: 80px;" name="play-circle"></ion-icon>
+          </ion-button>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-button *ngIf="!recording" (click)="confirmRecording()" fill="clear">
+            <ion-icon style="font-size: 80px;" name="mic-circle" color="primary"></ion-icon>
+          </ion-button>
+          <ion-button *ngIf="recording" (click)="stopRecording()" fill="clear">
+            <ion-icon style="font-size: 80px;" name="mic-circle" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <span *ngIf="recording">Recording {{ durationDisplay }}</span>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+</ion-content>
